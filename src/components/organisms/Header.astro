@@ -1,0 +1,39 @@
+---
+import Logo from "@components/ui-parts/Logo.astro";
+---
+
+<header class="bg-white bg-opacity-30 backdrop-blur-md p-4 fixed w-full z-50">
+  <div class="container mx-auto">
+    <div class="flex justify-between items-center">
+      <Logo />
+      <nav class="hidden md:flex space-x-4">
+        <a href="#profile" class="text-lg hover:text-blue-500">プロフィール</a>
+        <a href="#skills" class="text-lg hover:text-blue-500">スキル・実績</a>
+        <a href="#portfolio" class="text-lg hover:text-blue-500"
+          >ポートフォリオ</a
+        >
+        <a href="#blog" class="text-lg hover:text-blue-500">ブログ</a>
+        <a href="#contact" class="text-lg hover:text-blue-500">お問い合わせ</a>
+      </nav>
+      <button class="md:hidden">
+        <!-- ハンバーガーメニューアイコンをここに追加 -->
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById(
+      "menuButton"
+    ) as HTMLButtonElement;
+    const mobileMenu = document.getElementById("mobileMenu") as HTMLElement;
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      mobileMenu.classList.toggle("hidden");
+    });
+  });
+</script>
