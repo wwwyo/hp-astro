@@ -1,16 +1,20 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Bubble from "@components/organisms/Bubble.astro";
+import Hero from "@components/organisms/Hero.astro";
+import Service from "@components/organisms/Service.astro";
+import Skills from "@components/organisms/Skills.astro";
+import Blog from "@components/organisms/Blog.astro";
+import Contact from "@components/organisms/Contact.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
+<Layout title="Pulpunte">
+  <main class="relative z-10">
+    <Bubble />
+    <Hero />
+    <Service />
+    <Skills />
+    <Blog />
+    <Contact />
   </main>
 </Layout>
-
-<style></style>
