@@ -8,13 +8,17 @@ module.exports = {
         // The accent color
         accent: "#FB2F3E",
         // The base color
-        base: "#fff",
+        base: {
+          dark: "#fff",
+          light: "#f1f1fc7e",
+        },
         main: {
           dark: "#84AEE1",
           light: "#D9F3FF",
         },
         // The black color
         black: "#050505",
+        secondary: "#707070",
       },
       backdropBlur: {
         glass: "blur(4px)",
