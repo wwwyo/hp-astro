@@ -1,5 +1,5 @@
 ---
-import Logo from "@components/ui-parts/Logo.astro";
+import Logo from "@components/ui/Logo.astro";
 ---
 
 <header
@@ -7,16 +7,26 @@ import Logo from "@components/ui-parts/Logo.astro";
   class="transition duration-1000 ease-linear fixed top-0 left-0 w-full z-30"
 >
   <nav class="container mx-auto flex items-center py-2 justify-between">
-    <Logo />
-    <ul class="hidden md:flex space-x-6">
-      <li><a href="/about">企業概要</a></li>
-      <li><a href="/services">サービス</a></li>
-      <li><a href="/blog">ブログ・ニュース</a></li>
-      <li><a href="/contact">お問い合わせ</a></li>
+    <a href="" class="w-80">
+      <Logo />
+    </a>
+    <ul class="hidden md:flex gap-x-3 [&>li]:duration-200 [&>li]:transition">
+      <li class="hover:bg-accent hover:text-white py-2 px-3 rounded-lg">
+        <a href="#about">企業概要</a>
+      </li>
+      <li class="hover:bg-accent hover:text-white py-2 px-3 rounded-lg">
+        <a href="#services">サービス</a>
+      </li>
+      <li class="hover:bg-accent hover:text-white py-2 px-3 rounded-lg">
+        <a href="#blog">ブログ・ニュース</a>
+      </li>
+      <li class="hover:bg-accent hover:text-white py-2 px-3 rounded-lg">
+        <a href="#contact">お問い合わせ</a>
+      </li>
     </ul>
     <button
       id="menuToggle"
-      class="md:hidden text-black"
+      class="md:hidden"
       aria-haspopup="true"
       aria-expanded="false">Menu</button
     >
@@ -28,16 +38,13 @@ import Logo from "@components/ui-parts/Logo.astro";
   >
     <ul class="space-y-4">
       <li role="none">
-        <a href="/about" role="menuitem">企業概要</a>
+        <a href="#services" role="menuitem">サービス</a>
       </li>
       <li role="none">
-        <a href="/services" role="menuitem">サービス</a>
+        <a href="#blog" role="menuitem">ブログ・ニュース</a>
       </li>
       <li role="none">
-        <a href="/blog" role="menuitem">ブログ・ニュース</a>
-      </li>
-      <li role="none">
-        <a href="/contact" role="menuitem">お問い合わせ</a>
+        <a href="#contact" role="menuitem">お問い合わせ</a>
       </li>
     </ul>
   </div>
