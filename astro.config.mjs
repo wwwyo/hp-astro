@@ -9,5 +9,11 @@ import partytown from "@astrojs/partytown";
 // https://astro.build/config
 export default defineConfig({
   site: "https://pulpuntex.com",
-  integrations: [tailwind(), image(), sitemap(), robotsTxt(), partytown()]
+  integrations: [
+    tailwind(),
+    image(),
+    sitemap(),
+    robotsTxt(),
+    partytown({ forward: ["dataLayer.push"] }),
+  ],
 });
