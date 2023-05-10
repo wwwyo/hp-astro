@@ -23,7 +23,6 @@
     "node": "16.13.0"
   },
   "devDependencies": {
-    "@astrojs/partytown": "^1.2.1",
     "@types/three": "^0.149.0",
     "prettier": "^2.8.4",
     "prettier-plugin-astro": "^0.8.0"
