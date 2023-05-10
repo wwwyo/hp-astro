@@ -7,5 +7,16 @@ import robotsTxt from "astro-robots-txt";
 // https://astro.build/config
 export default defineConfig({
   site: "https://pulpuntex.com",
-  integrations: [tailwind(), image(), sitemap(), robotsTxt()],
+  integrations: [
+    tailwind(),
+    image(),
+    sitemap(),
+    robotsTxt(),
+    partytown({
+      // Adds dataLayer.push as a forwarding-event.
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
 });

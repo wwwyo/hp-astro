@@ -1,5 +1,6 @@
 ---
 import Footer from "@components/organisms/Footer.astro";
+import GoogleAnalytics from "@components/organisms/GoogleAnalytics.astro";
 import Header from "@components/organisms/Header.astro";
 import Wrapper from "@components/organisms/Wrapper.astro";
 
@@ -13,37 +14,17 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!-- Google Tag Manager -->
+    <GoogleAnalytics />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta
-      name="google-site-verification"
-      content="IRsfNrgZkcsSmdOrraEF2iA-u5gkCe38v5n5lUVCYXA"
-    />
     <title>{title}</title>
     <meta
       name="description"
       content="Discover the unknown by giving it a try."
     />
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        // @ts-ignore
-        w[l] = w[l] || [];
-        // @ts-ignore
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        // @ts-ignore
-        j.async = true;
-        // @ts-ignore
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        // @ts-ignore
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-TZKPV3G");
-    </script>
-    <!-- End Google Tag Manager -->
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -59,45 +40,45 @@ const { title } = Astro.props;
     <Header />
     <slot />
     <Footer />
+    <style is:global>
+      html {
+        font-family: system-ui, sans-serif;
+        color: #050505;
+        scroll-behavior: smooth;
+        font-family: "Noto Sans JP", sans-serif;
+      }
+      body {
+        min-height: 100vh;
+      }
+      .glass {
+        border-radius: 15px;
+        backdrop-filter: blur(5px);
+        box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+        border: 2px rgba(255, 255, 255, 0.4) solid;
+        border-bottom: 2px rgba(40, 40, 40, 0.35) solid;
+        border-right: 2px rgba(40, 40, 40, 0.35) solid;
+        transition: all 300ms ease-out;
+      }
+      .glass:hover {
+        background: #ffffff33;
+        box-shadow: rgba(0, 0, 0, 0.6) 4px 8px 8px;
+      }
+
+      /* --- font --> */
+      @font-face {
+        font-family: "Noto Sans JP";
+        src: url("/fonts/NotoSansJP-Regular.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Noto Sans JP";
+        src: url("/fonts/NotoSansJP-Bold.woff2") format("woff2");
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
   </body>
 </html>
-<style is:global>
-  html {
-    font-family: system-ui, sans-serif;
-    color: #050505;
-    scroll-behavior: smooth;
-    font-family: "Noto Sans JP", sans-serif;
-  }
-  body {
-    min-height: 100vh;
-  }
-  .glass {
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
-    border: 2px rgba(255, 255, 255, 0.4) solid;
-    border-bottom: 2px rgba(40, 40, 40, 0.35) solid;
-    border-right: 2px rgba(40, 40, 40, 0.35) solid;
-    transition: all 300ms ease-out;
-  }
-  .glass:hover {
-    background: #ffffff33;
-    box-shadow: rgba(0, 0, 0, 0.6) 4px 8px 8px;
-  }
-
-  /* --- font --> */
-  @font-face {
-    font-family: "Noto Sans JP";
-    src: url("/fonts/NotoSansJP-Regular.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Noto Sans JP";
-    src: url("/fonts/NotoSansJP-Bold.woff2") format("woff2");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
-</style>
